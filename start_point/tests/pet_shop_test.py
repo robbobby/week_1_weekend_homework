@@ -80,6 +80,7 @@ class TestPetShop(unittest.TestCase):
         name = get_pet_shop_name(self.cc_pet_shop)
         self.assertEqual("Camelot of Pets", name) 
 
+        ##### √√√√√ #####
     def test_total_cash(self):
         sum = get_total_cash(self.cc_pet_shop)
         self.assertEqual(1000, sum)
