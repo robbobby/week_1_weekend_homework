@@ -23,7 +23,7 @@ def increase_pets_sold(pet_shop_list, number_of_pets_sold):
 
                             ##### Question 7 #####
 def get_stock_count(pet_shop_list):
-    return len(pet_shop_list["pets"])
+    return pet_shop_list["pets"].__len__()
 
                             ##### Question 8 #####
                             ##### Question 9 #####
@@ -77,17 +77,16 @@ def customer_can_afford_pet(customer, new_pet):
         return False
 
 def sell_pet_to_customer(pet_shop_list, pet, customer):
-    try:
-        if customer_can_afford_pet(customer, pet) and find_pet_by_name(pet_shop_list, pet["name"]):
-            remove_customer_cash(customer, pet["price"])
-            add_pet_to_customer(customer, pet)
+    # if pet != None:
+    if pet is not None and customer_can_afford_pet(customer, pet):
 
-            # if (type(pet) == "list"):
-            #     increase_pets_sold(pet_shop_list, len(pet))
-            # else:
-            
-            increase_pets_sold(pet_shop_list, 1)
-            remove_pet_by_name(pet_shop_list, pet["name"])
-            add_or_remove_cash(pet_shop_list, pet["price"])
-    except:
-        return
+        remove_customer_cash(customer, pet["price"])
+        add_pet_to_customer(customer, pet)
+
+        # if (type(pet) == "list"):
+        #     increase_pets_sold(pet_shop_list, len(pet))
+        # else:
+        
+        increase_pets_sold(pet_shop_list, 1)
+        remove_pet_by_name(pet_shop_list, pet["name"])
+        add_or_remove_cash(pet_shop_list, pet["price"])
