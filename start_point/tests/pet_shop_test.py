@@ -117,24 +117,24 @@ class TestPetShop(unittest.TestCase):
     def test_all_pets_by_breed__found(self):
         pets = get_pets_by_breed(self.cc_pet_shop, "British Shorthair")
         print (pets)
-        # self.assertEqual(2, len(pets))
+        self.assertEqual(2, len(pets))
         print (pets)
         ##### √√√√√ #####       Q9
     def test_all_pets_by_breed__not_found(self):
         pets = get_pets_by_breed(self.cc_pet_shop, "Dalmation")
-        # self.assertEqual(0, len(pets))
+        self.assertEqual(0, len(pets))
         
         ##### √√√√√ #####       Q10
     def test_find_pet_by_name__returns_pet(self):
         pet = find_pet_by_name(self.cc_pet_shop, "Arthur")
         self.assertEqual("Arthur", pet["name"])
 
-    @unittest.skip("delete this line to run the test")
+        ##### √√√√√ #####       Q11
     def test_find_pet_by_name__returns_None(self):
         pet = find_pet_by_name(self.cc_pet_shop, "Fred")
         self.assertIsNone(pet)
 
-    @unittest.skip("delete this line to run the test")
+        ##### √√√√√ #####       Q12
     def test_remove_pet_by_name(self):
         remove_pet_by_name(self.cc_pet_shop, "Arthur")
         pet = find_pet_by_name(self.cc_pet_shop,"Arthur")
