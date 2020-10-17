@@ -53,3 +53,7 @@ def add_pet_to_stock(pet_shop_list, new_pet):
                             ##### Question 14 #####
 def get_customer_cash(customer):
     return customer["cash"]
+
+                            ##### Queestion 15 #####
+def remove_customer_cash(customer, cash_gone):
+    customer["cash"] -= cash_gone
